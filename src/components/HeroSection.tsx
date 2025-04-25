@@ -3,6 +3,15 @@ import React from 'react';
 import { Mail, Linkedin, Github, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+const handleDownloadCV = () => {
+  const link = document.createElement('a');
+  link.href = "public/CV_Mohamed_Boulkassoum_Data_Engineering.pdf";
+  link.download = 'public/CV_Mohamed_Boulkassoum_Data_Engineering.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const HeroSection = () => {
   return (
     <section id="hero" className="relative h-screen flex items-center">
@@ -14,7 +23,7 @@ const HeroSection = () => {
           <div className="md:col-span-5 flex justify-center md:justify-end">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                src="public/Bilgassim.jpg"
                 alt="Mohamed Boulkassoum"
                 className="w-full h-full object-cover"
               />
@@ -36,7 +45,7 @@ const HeroSection = () => {
                 <Mail className="w-5 h-5" />
               </a>
               <a 
-                href="https://linkedin.com/in/mohamedboulkassoum" 
+                href="https://linkedin.com/in/moboulkassoum"
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-3 bg-white rounded-full shadow-md hover:bg-portfolio-blue hover:text-white transition-colors"
@@ -45,7 +54,7 @@ const HeroSection = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="https://github.com/mohamedboulkassoum" 
+                href="https://github.com/bilgassim"
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-3 bg-white rounded-full shadow-md hover:bg-portfolio-blue hover:text-white transition-colors"
@@ -54,7 +63,7 @@ const HeroSection = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="tel:+212600000000" 
+                href="tel:+212710911949"
                 className="p-3 bg-white rounded-full shadow-md hover:bg-portfolio-blue hover:text-white transition-colors"
                 aria-label="Phone"
               >
@@ -62,7 +71,7 @@ const HeroSection = () => {
               </a>
             </div>
             
-            <Button 
+            <Button onClick={handleDownloadCV}
               className="bg-portfolio-blue-dark hover:bg-portfolio-blue text-white px-6 py-2 rounded-md shadow-md"
             >
               Télécharger mon CV

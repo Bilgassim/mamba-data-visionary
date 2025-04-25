@@ -11,19 +11,19 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-lg font-bold">Mohamed Boulkassoum</p>
-            <p className="text-sm text-gray-300">Data Engineering Student</p>
+            <p className="text-sm text-gray-300">Management & Governance of Information Systems Student</p>
           </div>
           
           <div className="flex space-x-4">
             <a 
-              href="mailto:contact@mohamedboulkassoum.com" 
+              href="mailto:contact@boulkassoum2002@gmail.com"
               className="text-white hover:text-gray-300 transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
             </a>
             <a 
-              href="https://linkedin.com/in/mohamedboulkassoum" 
+              href="https://linkedin.com/in/moboulkassoum"
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-white hover:text-gray-300 transition-colors"
@@ -41,7 +41,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a 
-              href="tel:+212600000000" 
+              href="tel:+212710911949"
               className="text-white hover:text-gray-300 transition-colors"
               aria-label="Phone"
             >
