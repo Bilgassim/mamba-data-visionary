@@ -113,6 +113,160 @@ const ProjectsSection = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Cabinet medical */}
+        <Card className="shadow-lg border-t-4 border-t-portfolio-green overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-portfolio-green/5 to-transparent">
+            <CardTitle className="text-2xl">Plateforme Cabinet Médical</CardTitle>
+            <CardDescription>Solution de gestion de rendez-vous et dossier patient</CardDescription>
+          </CardHeader>
+
+          <Tabs defaultValue="contextMedical">
+            <TabsList className="px-6">
+              <TabsTrigger value="contextMedical">Contexte</TabsTrigger>
+              <TabsTrigger value="techMedical">Stack</TabsTrigger>
+              <TabsTrigger value="resultsMedical">Fonctionnalités</TabsTrigger>
+            </TabsList>
+
+            <CardContent className="pt-6">
+              <TabsContent value="contextMedical">
+                <p>Application web sur mesure pour un cabinet de radiologie comprenant :</p>
+                <ul className="list-disc pl-5 mt-2 space-y-1">
+                  <li>Gestion des rendez-vous en temps réel</li>
+                  <li>Visualisation des examens (DICOM viewer intégré)</li>
+                  <li>Espace sécurisé pour les patients et médecins</li>
+                </ul>
+              </TabsContent>
+
+              <TabsContent value="techMedical">
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">React</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">OHIF Viewer</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Hébergement AWS</span>
+                </div>
+                <p className="mt-3 text-sm">Architecture microservices avec API REST sécurisée (JWT)</p>
+              </TabsContent>
+
+              <TabsContent value="resultsMedical">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-green-50 p-3 rounded-lg">
+                    <h4 className="font-medium">Patients</h4>
+                    <ul className="text-xs mt-1 space-y-1">
+                      <li>• Prise de RDV en ligne</li>
+                      <li>• Consultation des résultats</li>
+                      <li>• Messagerie sécurisée</li>
+                    </ul>
+                  </div>
+                  <div className="bg-green-50 p-3 rounded-lg">
+                    <h4 className="font-medium">Administration</h4>
+                    <ul className="text-xs mt-1 space-y-1">
+                      <li>• Tableau de bord analytique</li>
+                      <li>• Export des données</li>
+                      <li>• Gestion multi-utilisateurs</li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="#" className="inline-block mt-4 text-sm text-green-600 hover:underline">
+                  Voir la démo live →
+                </a>
+              </TabsContent>
+            </CardContent>
+          </Tabs>
+        </Card>
+
+        {/* Sincoshop */}
+        <Card className="shadow-lg border-t-4 border-t-portfolio-orange overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-portfolio-orange/5 to-transparent">
+            <CardTitle className="text-2xl">Sincoshop</CardTitle>
+            <CardDescription>Système de gestion de stock et ventes</CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div className="space-y-4">
+              <p>ERP complet développé avec Laravel incluant :</p>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-1">
+                  <h4 className="font-medium mb-2">Modules clés</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Gestion des inventaires (alertes seuil)</li>
+                    <li>Suivi des commandes fournisseurs</li>
+                    <li>Reporting analytique</li>
+                    <li>Intégration API bancaires</li>
+                  </ul>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-medium mb-2">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">Laravel 10</span>
+                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">Livewire</span>
+                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">MySQL</span>
+                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">Redis</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-orange-50 p-3 rounded-lg mt-3">
+                <h4 className="font-medium flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clipRule="evenodd"/>
+                  </svg>
+                  Résultats concrets
+                </h4>
+                <p className="text-sm mt-1">Réduction de 30% des ruptures de stock et gain de 15h/semaine sur la gestion administrative</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Boutique e-shopping */}
+        <Card className="shadow-lg border-t-4 border-t-portfolio-blue overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-portfolio-blue/5 to-transparent">
+            <CardTitle className="text-2xl">Boutique E-commerce</CardTitle>
+            <CardDescription>Site vitrine avec fonctionnalités de vente en ligne</CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <img
+                    src="https://independant.io/wp-content/uploads/woocommerce_logo.png"
+                    alt="WooCommerce"
+                    className="w-8 h-8 object-contain"
+                />
+                <div>
+                  <h4 className="font-medium">Solution clé en main</h4>
+                  <p className="text-sm text-portfolio-gray-dark">Personnalisation avancée d'un thème WordPress</p>
+                </div>
+              </div>
+
+              <ul className="list-disc pl-5 space-y-1 text-sm">
+                <li>Intégration avec système de paiement (PayPal, Carte bancaire)</li>
+                <li>Module de livraison personnalisé</li>
+                <li>SEO optimisé (Score Lighthouse &gt; 90)</li>
+                <li>Backoffice multilingue (FR/AR)</li>
+              </ul>
+
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">WordPress</span>
+                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">WooCommerce</span>
+                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Elementor Pro</span>
+                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">MySQL</span>
+              </div>
+
+              <div className="mt-4 flex justify-between items-center">
+                <a href="chicmodapro.com" className="text-sm text-blue-600 hover:underline flex items-center gap-1">
+                  Visiter le site
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
