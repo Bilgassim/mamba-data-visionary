@@ -33,7 +33,7 @@ const HeroSection = () => {
           <div className="md:col-span-7 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Mohamed Boulkassoum</h1>
             <p className="text-lg md:text-xl text-portfolio-gray mb-6">
-              Étudiant en Management et Gouvernance des SI, développeur Full Stack(Laravel & React), passionné par l'ingénierie des données
+              Étudiant en Management & Gouvernance de SI, développeur Full Stack(Laravel & React), Ingénierie des données
             </p>
             
             <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
