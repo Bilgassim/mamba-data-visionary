@@ -10,13 +10,13 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-lg font-bold">Mohamed Boulkassoum</p>
-            <p className="text-sm text-gray-300">Management & Governance of Information Systems Student</p>
+            <p className="text-lg font-bold">Mohamed Boulkassoum Boulkassoum</p>
+            <p className="text-sm text-gray-300">Eleve ingenieur en Management et Gouvernance des Systèmes d'information</p>
           </div>
           
           <div className="flex space-x-4">
             <a 
-              href="mailto:contact@boulkassoum2002@gmail.com"
+              href="boulkassoum2002@gmail.com"
               className="text-white hover:text-gray-300 transition-colors"
               aria-label="Email"
             >
@@ -32,7 +32,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a 
-              href="https://github.com/mohamedboulkassoum" 
+              href="https://github.com/bilgassim"
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-white hover:text-gray-300 transition-colors"
