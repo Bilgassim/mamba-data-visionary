@@ -78,7 +78,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex items-center">
                   <Github className="w-5 h-5 text-portfolio-blue-dark mr-3" />
-                  <a href="https://github.com/mohamedboulkassoum" target="_blank" rel="noopener noreferrer" className="text-portfolio-gray-dark hover:text-portfolio-blue">
+                  <a href="https://github.com/bilgassim" target="_blank" rel="noopener noreferrer" className="text-portfolio-gray-dark hover:text-portfolio-blue">
                     github.com/bilgassim
                   </a>
                 </div>
