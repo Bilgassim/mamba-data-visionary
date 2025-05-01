@@ -61,25 +61,25 @@ const ContactSection = () => {
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-portfolio-blue-dark mr-3" />
                   <a href="mailto:contact@mohamedboulkassoum.com" className="text-portfolio-gray-dark hover:text-portfolio-blue">
-                    contact@mohamedboulkassoum.com
+                    boulkassoum2002@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-portfolio-blue-dark mr-3" />
-                  <a href="tel:+212600000000" className="text-portfolio-gray-dark hover:text-portfolio-blue">
-                    +212 6 00 00 00 00
+                  <a href="tel:+212710911949" className="text-portfolio-gray-dark hover:text-portfolio-blue">
+                    +212 710 91 19 49
                   </a>
                 </div>
                 <div className="flex items-center">
                   <Linkedin className="w-5 h-5 text-portfolio-blue-dark mr-3" />
                   <a href="https://linkedin.com/in/mohamedboulkassoum" target="_blank" rel="noopener noreferrer" className="text-portfolio-gray-dark hover:text-portfolio-blue">
-                    linkedin.com/in/mohamedboulkassoum
+                    linkedin.com/in/moboulkassoum
                   </a>
                 </div>
                 <div className="flex items-center">
                   <Github className="w-5 h-5 text-portfolio-blue-dark mr-3" />
                   <a href="https://github.com/mohamedboulkassoum" target="_blank" rel="noopener noreferrer" className="text-portfolio-gray-dark hover:text-portfolio-blue">
-                    github.com/mohamedboulkassoum
+                    github.com/bilgassim
                   </a>
                 </div>
               </div>
