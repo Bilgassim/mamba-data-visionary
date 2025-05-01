@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 
 const handleDownloadCV = () => {
   const link = document.createElement('a');
-  link.href = "public/CV_Mohamed_Boulkassoum_Data_Engineering.pdf";
-  link.download = 'public/CV_Mohamed_Boulkassoum_Data_Engineering.pdf';
+  link.href = "/CV_Mohamed_Boulkassoum_Data_Engineering.pdf";
+  link.download = 'CV_Mohamed_Boulkassoum.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -23,7 +23,7 @@ const HeroSection = () => {
           <div className="md:col-span-5 flex justify-center md:justify-end">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
               <img 
-                src="public/Bilgassim.jpg"
+                src="/Bilgassim.jpg"
                 alt="Mohamed Boulkassoum"
                 className="w-full h-full object-cover"
               />
@@ -38,7 +38,7 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
               <a 
-                href="mailto:contact@mohamedboulkassoum.com" 
+                href="mohamed.boulkassoum23@ump.ac.ma"
                 className="p-3 bg-white rounded-full shadow-md hover:bg-portfolio-blue hover:text-white transition-colors"
                 aria-label="Email"
               >
