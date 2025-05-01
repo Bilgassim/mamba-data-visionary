@@ -14,25 +14,25 @@ interface Education {
 const educations: Education[] = [
   {
     id: 1,
-    degree: "Diplôme d'Ingénieur en Management des SI",
+    degree: "Diplôme d'Ingénieur en Management et Gouvernance des SI",
     institution: "École Nationale des Sciences Appliquées",
     location: "Oujda, Maroc",
     period: "2021-2026",
     description: [
-      "Spécialisation en Data Engineering et Business Intelligence",
-      "Projets en IA et traitement d'images médicales",
-      "Formation approfondie en gestion de projets IT"
+      "Spécialisation en Management et Gouvernance des systèmes d'information",
+      "Projets en IA et traitement d'images médicales, Developpement web, Data Engineering",
+      "Classes préparatoires integrées"
     ]
   },
   {
     id: 2,
-    degree: "Baccalauréat Scientifique",
-    institution: "Lycée Mohammed VI",
-    location: "Oujda, Maroc",
-    period: "2020-2021",
+    degree: "Baccalauréat Scientifique D",
+    institution: "CSP L'Eau Vive",
+    location: "Niamey, Niger",
+    period: "2018-2021",
     description: [
-      "Mention Très Bien",
-      "Option Sciences Mathématiques"
+      "Mention Bien",
+      "Option Sciences Experimentales"
     ]
   }
 ];
