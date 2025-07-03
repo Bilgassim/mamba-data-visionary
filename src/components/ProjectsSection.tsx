@@ -221,49 +221,195 @@ const ProjectsSection = () => {
           </CardContent>
         </Card>
 
-        {/* Boutique e-shopping */}
+        {/* Détection automatique des calculs rénaux */}
         <Card className="shadow-lg border-t-4 border-t-portfolio-blue overflow-hidden">
           <CardHeader className="bg-gradient-to-r from-portfolio-blue/5 to-transparent">
-            <CardTitle className="text-2xl">Boutique E-commerce</CardTitle>
-            <CardDescription>Site vitrine avec fonctionnalités de vente en ligne</CardDescription>
+            <CardTitle className="text-2xl">Détection Calculs Rénaux (PFA)</CardTitle>
+            <CardDescription>Système d'IA semi-supervisé avec explicabilité XAI</CardDescription>
+          </CardHeader>
+
+          <Tabs defaultValue="contextRenal">
+            <TabsList className="px-6">
+              <TabsTrigger value="contextRenal">Contexte</TabsTrigger>
+              <TabsTrigger value="techRenal">Stack</TabsTrigger>
+              <TabsTrigger value="resultsRenal">Résultats</TabsTrigger>
+            </TabsList>
+
+            <CardContent className="pt-6">
+              <TabsContent value="contextRenal">
+                <p>Projet de fin d'année utilisant ResNet-50 pour la détection automatique des calculs rénaux sur images CT.</p>
+                <ul className="list-disc pl-5 mt-2 space-y-1">
+                  <li>Classification médicale avec explicabilité Grad-CAM++</li>
+                  <li>Visualisation DICOM intégrée</li>
+                  <li>Interface web complète (React + FastAPI)</li>
+                  <li>Architecture microservices avec Docker</li>
+                </ul>
+              </TabsContent>
+
+              <TabsContent value="techRenal">
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">FastAPI</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Cornerstone.js</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                </div>
+                <p className="mt-3 text-sm">Architecture microservices avec Celery pour le traitement asynchrone des images médicales</p>
+              </TabsContent>
+
+              <TabsContent value="resultsRenal">
+                <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <h4 className="font-medium">Performance</h4>
+                      <ul className="text-xs mt-1 space-y-1">
+                        <li>• Précision : 89.5%</li>
+                        <li>• AUC : 0.91</li>
+                        <li>• Validation radiologues</li>
+                      </ul>
+                    </div>
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <h4 className="font-medium">Innovation</h4>
+                      <ul className="text-xs mt-1 space-y-1">
+                        <li>• Explicabilité IA</li>
+                        <li>• Interface DICOM</li>
+                        <li>• Temps réel</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <button className="w-full mt-4 text-sm text-blue-600 hover:underline">
+                    En savoir plus →
+                  </button>
+                </div>
+              </TabsContent>
+            </CardContent>
+          </Tabs>
+        </Card>
+
+        {/* DarijaQuest */}
+        <Card className="shadow-lg border-t-4 border-t-portfolio-green overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-portfolio-green/5 to-transparent">
+            <CardTitle className="text-2xl">DarijaQuest</CardTitle>
+            <CardDescription>Plateforme d'apprentissage du Darija en ligne</CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div className="space-y-4">
+              <p>Application éducative interactive pour apprendre le Darija (arabe marocain) avec reconnaissance vocale et progression personnalisée.</p>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-1">
+                  <h4 className="font-medium mb-2">Fonctionnalités</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Interface ludique style Duolingo</li>
+                    <li>Reconnaissance vocale intégrée</li>
+                    <li>Quiz interactifs et audio</li>
+                    <li>Progression par niveaux</li>
+                  </ul>
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-medium mb-2">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">React + Vite</span>
+                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Firebase</span>
+                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">TailwindCSS</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-green-50 p-3 rounded-lg mt-3">
+                <h4 className="font-medium">Impact éducatif</h4>
+                <p className="text-sm mt-1">Facilite l'apprentissage du dialecte marocain pour les francophones et arabophones</p>
+              </div>
+
+              <button className="w-full mt-4 text-sm text-green-600 hover:underline">
+                En savoir plus →
+              </button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Mamba Academy */}
+        <Card className="shadow-lg border-t-4 border-t-portfolio-orange overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-portfolio-orange/5 to-transparent">
+            <CardTitle className="text-2xl">Mamba Academy</CardTitle>
+            <CardDescription>Site vitrine pour centre de formations bureautiques</CardDescription>
           </CardHeader>
 
           <CardContent>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <img
-                    src="https://independant.io/wp-content/uploads/woocommerce_logo.png"
-                    alt="WooCommerce"
-                    className="w-8 h-8 object-contain"
-                />
+                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                  </svg>
+                </div>
                 <div>
-                  <h4 className="font-medium">Solution clé en main</h4>
-                  <p className="text-sm text-portfolio-gray-dark">Personnalisation avancée d'un thème WordPress</p>
+                  <h4 className="font-medium">Centre de formation</h4>
+                  <p className="text-sm text-portfolio-gray-dark">Formations professionnelles en bureautique</p>
                 </div>
               </div>
 
               <ul className="list-disc pl-5 space-y-1 text-sm">
-                <li>Intégration avec système de paiement (PayPal, Carte bancaire)</li>
-                <li>Module de livraison personnalisé</li>
-                <li>SEO optimisé (Score Lighthouse &gt; 90)</li>
-                <li>Backoffice multilingue (FR/AR)</li>
+                <li>Présentation complète des offres de formation</li>
+                <li>Formulaire d'inscription intégré</li>
+                <li>Design responsive et moderne</li>
+                <li>Intégration WhatsApp pour contact direct</li>
               </ul>
 
               <div className="flex flex-wrap gap-2 mt-3">
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">WordPress</span>
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">WooCommerce</span>
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Elementor Pro</span>
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">MySQL</span>
+                <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">WordPress</span>
+                <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">Astra Theme</span>
+                <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">Elementor</span>
               </div>
 
-              <div className="mt-4 flex justify-between items-center">
-                <a href="chicmodapro.com" className="text-sm text-blue-600 hover:underline flex items-center gap-1">
-                  Visiter le site
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+              <button className="w-full mt-4 text-sm text-orange-600 hover:underline">
+                En savoir plus →
+              </button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Site e-marketing */}
+        <Card className="shadow-lg border-t-4 border-t-purple-500 overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-purple-500/5 to-transparent">
+            <CardTitle className="text-2xl">Site E-Marketing</CardTitle>
+            <CardDescription>Site vitrine pour entreprise de marketing digital</CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm8 0a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1h-4a1 1 0 01-1-1V8zm0 4a1 1 0 011-1h4a1 1 0 011 1v2a1 1 0 01-1 1h-4a1 1 0 01-1-1v-2z" clipRule="evenodd"/>
                   </svg>
-                </a>
+                </div>
+                <div>
+                  <h4 className="font-medium">Projet freelance</h4>
+                  <p className="text-sm text-portfolio-gray-dark">Développement sur mesure pour entreprise locale</p>
+                </div>
               </div>
+
+              <ul className="list-disc pl-5 space-y-1 text-sm">
+                <li>Présentation des services marketing</li>
+                <li>Section témoignages clients</li>
+                <li>Optimisation SEO avancée</li>
+                <li>Animations et design responsive</li>
+              </ul>
+
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">HTML5</span>
+                <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">CSS3</span>
+                <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">JavaScript</span>
+                <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Bootstrap</span>
+              </div>
+
+              <button className="w-full mt-4 text-sm text-purple-600 hover:underline">
+                En savoir plus →
+              </button>
             </div>
           </CardContent>
         </Card>
