@@ -16,22 +16,80 @@ interface Language {
 }
 
 const skills: Skill[] = [
+  // Programming Languages
   { name: "Python", category: "programming" },
+  { name: "JavaScript", category: "programming" },
+  { name: "PHP", category: "programming" },
   { name: "SQL", category: "programming" },
   { name: "R", category: "programming" },
-  { name: "JavaScript", category: "programming" },
+  { name: "HTML/CSS", category: "programming" },
+  
+  // Frameworks & Libraries
+  { name: "React", category: "frameworks" },
+  { name: "Vue.js", category: "frameworks" },
+  { name: "Laravel", category: "frameworks" },
+  { name: "FastAPI", category: "frameworks" },
+  { name: "PyTorch", category: "frameworks" },
+  { name: "TensorFlow", category: "frameworks" },
+  { name: "Bootstrap", category: "frameworks" },
+  { name: "TailwindCSS", category: "frameworks" },
+  
+  // Data & Big Data
   { name: "Spark", category: "data" },
   { name: "Hadoop", category: "data" },
   { name: "Airflow", category: "data" },
   { name: "Kafka", category: "data" },
-  { name: "Machine Learning", category: "data-science" },
-  { name: "Deep Learning", category: "data-science" },
-  { name: "Data Visualization", category: "data-science" },
+  { name: "Redis", category: "data" },
+  { name: "Firebase", category: "data" },
+  { name: "PostgreSQL", category: "data" },
+  { name: "MongoDB", category: "data" },
+  
+  // AI & Data Science
+  { name: "Machine Learning", category: "ai" },
+  { name: "Deep Learning", category: "ai" },
+  { name: "Computer Vision", category: "ai" },
+  { name: "NLP", category: "ai" },
+  { name: "XAI (Explainable AI)", category: "ai" },
+  { name: "Grad-CAM", category: "ai" },
+  { name: "ResNet", category: "ai" },
+  
+  // Visualization & BI
   { name: "Tableau", category: "visualization" },
   { name: "Power BI", category: "visualization" },
-  { name: "Excel", category: "tools" },
-  { name: "Git", category: "tools" },
-  { name: "Docker", category: "tools" },
+  { name: "D3.js", category: "visualization" },
+  { name: "Matplotlib", category: "visualization" },
+  { name: "Plotly", category: "visualization" },
+  
+  // DevOps & Tools
+  { name: "Docker", category: "devops" },
+  { name: "Kubernetes", category: "devops" },
+  { name: "Git", category: "devops" },
+  { name: "CI/CD", category: "devops" },
+  { name: "AWS", category: "devops" },
+  { name: "Linux", category: "devops" },
+  
+  // Security & Pentesting
+  { name: "Penetration Testing", category: "security" },
+  { name: "Kali Linux", category: "security" },
+  { name: "Nmap", category: "security" },
+  { name: "Metasploit", category: "security" },
+  { name: "Burp Suite", category: "security" },
+  { name: "OWASP", category: "security" },
+  
+  // Project Management
+  { name: "Agile/Scrum", category: "management" },
+  { name: "Jira", category: "management" },
+  { name: "Confluence", category: "management" },
+  { name: "Trello", category: "management" },
+  { name: "MS Project", category: "management" },
+  
+  // CMS & Others
+  { name: "WordPress", category: "cms" },
+  { name: "Elementor", category: "cms" },
+  { name: "Drupal", category: "cms" },
+  { name: "Celery", category: "tools" },
+  { name: "Vite", category: "tools" },
+  { name: "Cornerstone.js", category: "tools" },
 ];
 
 const languages: Language[] = [
@@ -43,10 +101,15 @@ const languages: Language[] = [
 const SkillsSection = () => {
   const categories = [
     { id: "programming", name: "Langages de programmation" },
+    { id: "frameworks", name: "Frameworks & Libraries" },
     { id: "data", name: "Technologies Big Data" },
-    { id: "data-science", name: "Data Science & ML" },
-    { id: "visualization", name: "Visualisation" },
-    { id: "tools", name: "Outils & Plateformes" },
+    { id: "ai", name: "IA & Data Science" },
+    { id: "visualization", name: "Visualisation & BI" },
+    { id: "devops", name: "DevOps & Cloud" },
+    { id: "security", name: "Cybersécurité & Pentesting" },
+    { id: "management", name: "Gestion de Projet" },
+    { id: "cms", name: "CMS & Web" },
+    { id: "tools", name: "Outils spécialisés" },
   ];
 
   return (

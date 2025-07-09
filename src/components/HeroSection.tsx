@@ -1,16 +1,7 @@
 
 import React from 'react';
 import { Mail, Linkedin, Github, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-
-const handleDownloadCV = () => {
-  const link = document.createElement('a');
-  link.href = "/CV_Mohamed_Boulkassoum_Data_Engineering.pdf";
-  link.download = 'CV_Mohamed_Boulkassoum.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+import CVSelector from './CVSelector';
 
 const HeroSection = () => {
   return (
@@ -71,18 +62,14 @@ const HeroSection = () => {
               </a>
             </div>
             
-            <Button onClick={handleDownloadCV}
-              className="bg-portfolio-blue-dark hover:bg-portfolio-blue text-white px-6 py-2 rounded-md shadow-md"
-            >
-              Télécharger mon CV
-            </Button>
+            <CVSelector />
           </div>
         </div>
       </div>
       
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-        <a href="#projects" aria-label="Défiler vers le bas">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-portfolio-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <a href="#projects" aria-label="Défiler vers le bas" className="block p-2 hover:bg-white/10 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 text-portfolio-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </a>
