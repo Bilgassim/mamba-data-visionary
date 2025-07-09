@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Database, Shield, Code, ClipboardList } from 'lucide-react';
+import { useProfile, ProfileType } from '../context/ProfileContext';
 
 interface CVOption {
   id: string;
@@ -48,7 +49,7 @@ const cvOptions: CVOption[] = [
 ];
 
 const CVSelector = () => {
-  const [selectedCV, setSelectedCV] = useState<string>('data-engineering');
+  const { selectedProfile, setSelectedProfile } = useProfile();
 
   const handleDownloadCV = (fileName: string) => {
     const link = document.createElement('a');
@@ -59,7 +60,7 @@ const CVSelector = () => {
     document.body.removeChild(link);
   };
 
-  const selectedOption = cvOptions.find(cv => cv.id === selectedCV);
+  const selectedOption = cvOptions.find(cv => cv.id === selectedProfile);
 
   return (
     <div className="space-y-6">
@@ -75,11 +76,11 @@ const CVSelector = () => {
             <Card 
               key={cv.id} 
               className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                selectedCV === cv.id 
+                selectedProfile === cv.id 
                   ? 'ring-2 ring-portfolio-blue border-portfolio-blue' 
                   : 'hover:border-portfolio-blue/50'
               }`}
-              onClick={() => setSelectedCV(cv.id)}
+              onClick={() => setSelectedProfile(cv.id as ProfileType)}
             >
               <CardContent className="p-4 text-center">
                 <div className={`w-12 h-12 ${cv.color} rounded-full flex items-center justify-center mx-auto mb-3`}>
