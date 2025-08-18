@@ -9,6 +9,7 @@ import EducationSection from '@/components/EducationSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import AgentChatWidget from '@/components/AgentChatWidget';
 
 const Index = () => {
   // Scroll animation handler
@@ -44,6 +45,7 @@ const Index = () => {
       <AboutSection />
       <ContactSection />
       <Footer />
+      <AgentChatWidget />
     </div>
   );
 };
