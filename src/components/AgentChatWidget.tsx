@@ -23,6 +23,32 @@ const AgentChatWidget: React.FC = () => {
   const [showContact, setShowContact] = useState(false);
   const endRef = useRef<HTMLDivElement | null>(null);
 
+  // Données sur Mohamed
+  const formations = useMemo(() => [
+    "AWS Cloud Computing & DevOps – Go AI Academy (Août 2025)",
+    "Développement Full Stack – Go AI Academy", 
+    "Intelligence Artificielle – Go AI Academy",
+    "Ethical Hacking – Go AI Academy"
+  ], []);
+
+  const projetsNotables = useMemo(() => [
+    "DarijaQuest - Application web/mobile d'apprentissage du dialecte marocain (React, Supabase, Capacitor)",
+    "Speed Services - Plateforme locale de livraison à Oujda",
+    "Bigg's Media - Média web vidéo/audio (React, Supabase)",
+    "Sincoshop - Gestion de stock pour une boutique",
+    "Cabinet Médical - Plateforme de rendez-vous et gestion patient",
+    "Détection Calculs Rénaux - IA (projet académique PFA)",
+    "Solidarity World - Chef de projet"
+  ], []);
+
+  const domainesSpecialite = useMemo(() => [
+    "Développement web : React, Laravel, Supabase",
+    "Cloud & DevOps : AWS, CI/CD, automatisation", 
+    "Data & IA : Python, Analyse de données, Détection par IA",
+    "Cybersécurité : ISO 27001, Pentest, Ethical Hacking",
+    "Gestion de projets : coordination d'équipes, pilotage technique"
+  ], []);
+
   // Anchor helper
   const goTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -46,15 +72,15 @@ const AgentChatWidget: React.FC = () => {
 
   const projectTitles = useMemo(
     () => [
-      "Projet IA Médicale - ENSAO",
-      "Chef de projet - Solidarity World",
-      "Plateforme Cabinet Médical",
-      "Détection Calculs Rénaux (PFA)",
-      "Sincoshop",
       "DarijaQuest",
-      "Mamba Academy",
-      "Site E-Marketing",
-      "Boutique E-commerce",
+      "Speed Services", 
+      "Bigg's Media",
+      "Sincoshop",
+      "Cabinet Médical",
+      "Détection Calculs Rénaux (PFA)",
+      "Solidarity World",
+      "Projet IA Médicale - ENSAO",
+      "Mamba Academy"
     ],
     []
   );
@@ -66,19 +92,28 @@ const AgentChatWidget: React.FC = () => {
     ]);
   };
 
+  const addActionButtons = () => (
+    <div className="mt-3 flex flex-wrap gap-2">
+      <Button size="sm" variant="secondary" onClick={() => goTo("projects")}>👉 Voir projets</Button>
+      <Button size="sm" variant="secondary" onClick={() => goTo("skills")}>👉 Voir compétences</Button>
+      <Button size="sm" variant="secondary" onClick={() => goTo("education")}>👉 Voir formations</Button>
+      <Button size="sm" variant="secondary" onClick={() => setShowContact(true)}>👉 Contacter Mohamed</Button>
+    </div>
+  );
+
   const welcome = () => {
     sendAssistant(
       <div>
-        <p className="mb-2 font-medium">Bonjour et bienvenue 👋</p>
-        <p className="text-sm text-foreground/80">
-          Je suis l’assistant de Mohamed. Je peux vous aider à explorer son profil, ses projets
-          et ses compétences. Que souhaitez‑vous savoir ?
+        <p className="mb-2 font-medium">Bonjour et bienvenue ! 👋</p>
+        <p className="text-sm text-foreground/80 mb-3">
+          Je suis l'assistant virtuel du portfolio de Mohamed Boulkassoum. 
+          Ma mission est de vous aider à explorer ses projets, ses compétences, ses formations et à le contacter.
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Button size="sm" variant="secondary" onClick={() => goTo("projects")}>Voir les projets</Button>
-          <Button size="sm" variant="secondary" onClick={() => goTo("skills")}>Voir les compétences</Button>
-          <Button size="sm" variant="secondary" onClick={() => setShowContact(true)}>Le contacter</Button>
-        </div>
+        <p className="text-sm text-foreground/70 mb-3">
+          Mohamed est étudiant en Management et Gouvernance des Systèmes d'Information à l'ENSAO, 
+          spécialisé en développement web, Cloud & DevOps, Data & IA, cybersécurité et gestion de projets.
+        </p>
+        {addActionButtons()}
       </div>
     );
   };
@@ -112,8 +147,63 @@ const AgentChatWidget: React.FC = () => {
       setShowContact(true);
       sendAssistant(
         <div>
-          <p className="mb-2">Parfait, je prépare un formulaire rapide.</p>
+          <p className="mb-2">Parfait ! ✅ Je prépare un formulaire rapide pour contacter Mohamed.</p>
+          <p className="text-sm text-foreground/70 mb-2">
+            Vous pouvez aussi le joindre directement via :
+          </p>
+          <div className="flex flex-wrap gap-2 text-sm mb-3">
+            <a href="mailto:boulkassoum2002@gmail.com" className="inline-flex items-center gap-1 underline text-primary"><Mail size={14}/> Email</a>
+            <a href="tel:+212710911949" className="inline-flex items-center gap-1 underline text-primary"><Phone size={14}/> Téléphone</a>
+            <a href="https://linkedin.com/in/moboulkassoum" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 underline text-primary"><ExternalLink size={14}/> LinkedIn</a>
+          </div>
           <Button size="sm" onClick={() => setShowContact(true)}>Ouvrir le formulaire</Button>
+        </div>
+      );
+      return;
+    }
+
+    if (/(cloud|aws)/.test(q)) {
+      sendAssistant(
+        <div>
+          <p className="mb-2">Oui ✅ Mohamed a suivi une formation en AWS Cloud Computing & DevOps avec Go AI Academy en août 2025.</p>
+          <p className="text-sm text-foreground/80 mb-2">Il maîtrise le déploiement et l'automatisation dans le Cloud.</p>
+          <div className="mt-3">
+            <Button size="sm" variant="secondary" onClick={() => goTo("skills")}>👉 Voir ses compétences Cloud & DevOps</Button>
+            <Button size="sm" variant="secondary" className="ml-2" onClick={() => goTo("projects")}>👉 Projets associés</Button>
+          </div>
+        </div>
+      );
+      return;
+    }
+
+    if (/(darijaquest|darija)/.test(q)) {
+      sendAssistant(
+        <div>
+          <p className="mb-2">DarijaQuest est une application web et mobile qui rend l'apprentissage du dialecte marocain ludique. 🎯</p>
+          <p className="text-sm text-foreground/80 mb-2">Elle a été développée avec React, Supabase et Capacitor.</p>
+          <div className="mt-3">
+            <Button size="sm" variant="secondary" onClick={() => goTo("projects")}>👉 Voir une démo</Button>
+            <Button size="sm" variant="secondary" className="ml-2" onClick={() => goTo("projects")}>👉 Autres projets similaires</Button>
+          </div>
+        </div>
+      );
+      return;
+    }
+
+    if (/(formation|formations|étude|études|academique|go ai academy)/.test(q)) {
+      sendAssistant(
+        <div>
+          <p className="mb-2">Voici les formations récentes de Mohamed :</p>
+          <ul className="list-disc pl-5 text-sm space-y-1 mb-3">
+            {formations.map((f) => (<li key={f}>{f}</li>))}
+          </ul>
+          <p className="text-sm text-foreground/80 mb-2">
+            Actuellement étudiant en Management et Gouvernance des Systèmes d'Information à l'ENSAO.
+          </p>
+          <div className="mt-3">
+            <Button size="sm" variant="secondary" onClick={() => goTo("education")}>👉 Voir le parcours complet</Button>
+            <Button size="sm" variant="secondary" className="ml-2" onClick={() => goTo("certifications")}>👉 Voir les certifications</Button>
+          </div>
         </div>
       );
       return;
@@ -123,44 +213,51 @@ const AgentChatWidget: React.FC = () => {
       sendAssistant(
         <div>
           <p className="mb-2">Voici les CV de Mohamed, selon les profils :</p>
-          <div className="grid grid-cols-1 gap-2 text-sm">
+          <div className="grid grid-cols-1 gap-2 text-sm mb-3">
             <a className="story-link" href="/CV_Mohamed_Boulkassoum_Data_Engineering.pdf" target="_blank" rel="noreferrer"><span className="inline-flex items-center gap-1"><ExternalLink size={14}/> CV Data Engineering</span></a>
             <a className="story-link" href="/CV_Mohamed_Boulkassoum_Pentesting.pdf" target="_blank" rel="noreferrer"><span className="inline-flex items-center gap-1"><ExternalLink size={14}/> CV Pentesting</span></a>
             <a className="story-link" href="/CV_Mohamed_Boulkassoum_FullStack.pdf" target="_blank" rel="noreferrer"><span className="inline-flex items-center gap-1"><ExternalLink size={14}/> CV Full‑Stack</span></a>
-            <a className="story-link" href="/CV_Mohamed_Boulkassoum_Project_Manager_PMO.pdf" target="_blank" rel="noreferrer"><span className="inline-flex items-center gap-1"><ExternalLink size={14}/> CV Project Manager PMO</span></a>
+            <a className="story-link" href="/CV_Mohamed_Boulkassoum_PMO.pdf" target="_blank" rel="noreferrer"><span className="inline-flex items-center gap-1"><ExternalLink size={14}/> CV Project Manager PMO</span></a>
           </div>
           <div className="mt-3">
-            <Button size="sm" variant="secondary" onClick={() => goTo("hero")}>Voir la sélection des profils</Button>
-          </div>
-        </div>
-      );
-      return;
-    }
-
-    if (/(compétence|competence|skills?)/.test(q)) {
-      sendAssistant(
-        <div>
-          <p className="mb-2">Quelques compétences clés ({profileTitles[selectedProfile]}) :</p>
-          <ul className="list-disc pl-5 text-sm space-y-1">
-            {topSkills.map((s) => (<li key={s}>{s}</li>))}
-          </ul>
-          <div className="mt-3">
-            <Button size="sm" variant="secondary" onClick={() => goTo("skills")}>Voir toutes les compétences</Button>
+            <Button size="sm" variant="secondary" onClick={() => goTo("hero")}>👉 Voir la sélection des profils</Button>
+            <Button size="sm" variant="secondary" className="ml-2" onClick={() => setShowContact(true)}>👉 Le contacter</Button>
           </div>
         </div>
       );
       return;
     }
 
-    if (/(projet|réalisations|experiences?)/.test(q)) {
+    if (/(compétence|competence|skills?|spécialité|specialite|domaine)/.test(q)) {
       sendAssistant(
         <div>
-          <p className="mb-2">Voici quelques projets marquants :</p>
-          <ul className="list-disc pl-5 text-sm space-y-1">
-            {projectTitles.slice(0, 7).map((t) => (<li key={t}>{t}</li>))}
+          <p className="mb-2">Domaines de spécialité de Mohamed :</p>
+          <ul className="list-disc pl-5 text-sm space-y-1 mb-3">
+            {domainesSpecialite.map((d) => (<li key={d}>{d}</li>))}
+          </ul>
+          <p className="text-sm text-foreground/80 mb-2">Compétences techniques pour {profileTitles[selectedProfile]} :</p>
+          <ul className="list-disc pl-5 text-sm space-y-1 mb-3">
+            {topSkills.slice(0, 5).map((s) => (<li key={s}>{s}</li>))}
           </ul>
           <div className="mt-3">
-            <Button size="sm" variant="secondary" onClick={() => goTo("projects")}>Voir tous les projets</Button>
+            <Button size="sm" variant="secondary" onClick={() => goTo("skills")}>👉 Voir toutes les compétences</Button>
+            <Button size="sm" variant="secondary" className="ml-2" onClick={() => goTo("projects")}>👉 Projets associés</Button>
+          </div>
+        </div>
+      );
+      return;
+    }
+
+    if (/(projet|réalisations|experiences?|portfolio)/.test(q)) {
+      sendAssistant(
+        <div>
+          <p className="mb-2">Voici les projets notables de Mohamed :</p>
+          <ul className="list-disc pl-5 text-sm space-y-1 mb-3">
+            {projetsNotables.slice(0, 5).map((p) => (<li key={p}>{p}</li>))}
+          </ul>
+          <div className="mt-3">
+            <Button size="sm" variant="secondary" onClick={() => goTo("projects")}>👉 Voir tous les projets</Button>
+            <Button size="sm" variant="secondary" className="ml-2" onClick={() => setShowContact(true)}>👉 Discuter d'un projet</Button>
           </div>
         </div>
       );
@@ -171,52 +268,45 @@ const AgentChatWidget: React.FC = () => {
       sendAssistant(
         <div>
           <p className="mb-2">Certifications récentes liées à {profileTitles[selectedProfile]} :</p>
-          <ul className="list-disc pl-5 text-sm space-y-1">
+          <ul className="list-disc pl-5 text-sm space-y-1 mb-3">
             {topCerts.map((t) => (<li key={t}>{t}</li>))}
           </ul>
           <div className="mt-3">
-            <Button size="sm" variant="secondary" onClick={() => goTo("certifications")}>Voir toutes les certifications</Button>
+            <Button size="sm" variant="secondary" onClick={() => goTo("certifications")}>👉 Voir toutes les certifications</Button>
+            <Button size="sm" variant="secondary" className="ml-2" onClick={() => goTo("education")}>👉 Voir les formations</Button>
           </div>
         </div>
       );
       return;
     }
 
-    if (/(formation|parcours|études|etudes|education)/.test(q)) {
-      sendAssistant(
-        <div>
-          <p className="mb-2">Vous pouvez consulter la formation et le parcours académique ici.</p>
-          <Button size="sm" variant="secondary" onClick={() => goTo("education")}>Voir la formation</Button>
-        </div>
-      );
-      return;
-    }
-
-    if (/(qui es-tu|qui es tu|présentation|profil|nom)/.test(q)) {
+    if (/(qui es-tu|qui es tu|présentation|profil|nom|mohamed|boulkassoum)/.test(q)) {
       const desc = profileDescriptions[selectedProfile];
       sendAssistant(
         <div>
           <p className="mb-2"><span className="font-medium">Mohamed Boulkassoum</span> — {desc}</p>
-          <div className="flex flex-wrap gap-2 text-sm">
-            <a href="mailto:boulkassoum2002@gmail.com" className="inline-flex items-center gap-1 underline"><Mail size={14}/> Email</a>
-            <a href="tel:+212710911949" className="inline-flex items-center gap-1 underline"><Phone size={14}/> Téléphone</a>
-            <a href="https://linkedin.com/in/moboulkassoum" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 underline"><ExternalLink size={14}/> LinkedIn</a>
+          <p className="text-sm text-foreground/80 mb-3">
+            Étudiant en Management et Gouvernance des Systèmes d'Information à l'ENSAO.
+          </p>
+          <div className="flex flex-wrap gap-2 text-sm mb-3">
+            <a href="mailto:boulkassoum2002@gmail.com" className="inline-flex items-center gap-1 underline text-primary"><Mail size={14}/> Email</a>
+            <a href="tel:+212710911949" className="inline-flex items-center gap-1 underline text-primary"><Phone size={14}/> Téléphone</a>
+            <a href="https://linkedin.com/in/moboulkassoum" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 underline text-primary"><ExternalLink size={14}/> LinkedIn</a>
           </div>
+          {addActionButtons()}
         </div>
       );
       return;
     }
 
-    // Fallback friendly answer
+    // Fallback friendly answer avec style professionnel
     sendAssistant(
       <div>
-        <p className="mb-2">Bonne question ! Je peux vous parler des projets, compétences, certifications ou vous mettre en contact.</p>
-        <div className="flex flex-wrap gap-2">
-          <Button size="sm" variant="secondary" onClick={() => goTo("projects")}>Projets</Button>
-          <Button size="sm" variant="secondary" onClick={() => goTo("skills")}>Compétences</Button>
-          <Button size="sm" variant="secondary" onClick={() => goTo("certifications")}>Certifications</Button>
-          <Button size="sm" onClick={() => setShowContact(true)}>Contacter</Button>
-        </div>
+        <p className="mb-2">Excellente question ! Je peux vous aider à explorer le profil de Mohamed en détail. 🎯</p>
+        <p className="text-sm text-foreground/80 mb-3">
+          Je peux vous parler de ses projets, compétences, formations, certifications ou vous mettre en contact avec lui.
+        </p>
+        {addActionButtons()}
       </div>
     );
   };
@@ -252,7 +342,7 @@ const AgentChatWidget: React.FC = () => {
       {/* Floating bubble */}
       {!open && (
         <button
-          aria-label="Ouvrir l’assistant"
+          aria-label="Ouvrir l'assistant"
           className="rounded-full shadow-lg border bg-background text-foreground p-3 hover-scale"
           onClick={() => setOpen(true)}
         >
