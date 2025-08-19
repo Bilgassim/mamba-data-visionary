@@ -94,24 +94,41 @@ const AgentChatWidget: React.FC = () => {
 
   const addActionButtons = () => (
     <div className="mt-3 flex flex-wrap gap-2">
-      <Button size="sm" variant="secondary" onClick={() => goTo("projects")}>👉 Voir projets</Button>
-      <Button size="sm" variant="secondary" onClick={() => goTo("skills")}>👉 Voir compétences</Button>
-      <Button size="sm" variant="secondary" onClick={() => goTo("education")}>👉 Voir formations</Button>
-      <Button size="sm" variant="secondary" onClick={() => setShowContact(true)}>👉 Contacter Mohamed</Button>
+      <Button size="sm" variant="secondary" onClick={() => goTo("projects")} className="text-xs">
+        👉 Voir projets
+      </Button>
+      <Button size="sm" variant="secondary" onClick={() => goTo("skills")} className="text-xs">
+        👉 Voir compétences
+      </Button>
+      <Button size="sm" variant="secondary" onClick={() => goTo("education")} className="text-xs">
+        👉 Voir formations
+      </Button>
+      <Button size="sm" variant="secondary" onClick={() => setShowContact(true)} className="text-xs">
+        👉 Contacter Mohamed
+      </Button>
     </div>
   );
 
   const welcome = () => {
     sendAssistant(
       <div>
-        <p className="mb-2 font-medium">Bonjour et bienvenue ! 👋</p>
+        <p className="mb-2 font-medium text-primary">Bonjour et bienvenue ! 👋</p>
         <p className="text-sm text-foreground/80 mb-3">
-          Je suis l'assistant virtuel du portfolio de Mohamed Boulkassoum. 
-          Ma mission est de vous aider à explorer ses projets, ses compétences, ses formations et à le contacter.
+          Je suis l'assistant virtuel de <span className="font-semibold text-primary">Mohamed Boulkassoum</span>. 
+          Ma mission est de vous aider à explorer ses projets, compétences, formations et à le contacter facilement.
         </p>
-        <p className="text-sm text-foreground/70 mb-3">
-          Mohamed est étudiant en Management et Gouvernance des Systèmes d'Information à l'ENSAO, 
-          spécialisé en développement web, Cloud & DevOps, Data & IA, cybersécurité et gestion de projets.
+        <div className="p-3 bg-muted/50 rounded-lg mb-3">
+          <p className="text-sm text-foreground/70 mb-2">
+            <span className="font-semibold">Mohamed</span> est étudiant en Management et Gouvernance des SI à l'ENSAO
+          </p>
+          <div className="text-xs text-foreground/60 space-y-1">
+            <div>🔧 Développement web, Cloud & DevOps</div>
+            <div>🤖 Data & IA, Cybersécurité</div>
+            <div>📊 Gestion de projets</div>
+          </div>
+        </div>
+        <p className="text-sm font-medium text-primary mb-2">
+          Que souhaitez-vous découvrir ?
         </p>
         {addActionButtons()}
       </div>
@@ -339,67 +356,90 @@ const AgentChatWidget: React.FC = () => {
 
   return (
     <div className="fixed bottom-4 right-4 z-[60]">
-      {/* Floating bubble */}
+      {/* Floating bubble avec animation */}
       {!open && (
         <button
           aria-label="Ouvrir l'assistant"
-          className="rounded-full shadow-lg border bg-background text-foreground p-3 hover-scale"
+          className="relative rounded-full shadow-xl border bg-gradient-to-br from-primary/10 to-primary/20 backdrop-blur-sm text-primary p-4 hover-scale transition-all duration-300 hover:shadow-2xl hover:from-primary/20 hover:to-primary/30"
           onClick={() => setOpen(true)}
         >
           <MessageCircle className="w-6 h-6" />
+          {/* Indicateur de pulsation */}
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+          {/* Animation de cercle */}
+          <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-ping"></div>
         </button>
       )}
 
-      {/* Panel */}
+      {/* Panel avec animation d'entrée */}
       {open && (
-        <Card className="w-[92vw] max-w-[380px] h-[68vh] max-h-[560px] bg-background shadow-xl border overflow-hidden flex flex-col">
-          <div className="flex items-center justify-between px-4 py-3 border-b">
-            <div className="flex items-center gap-2">
-              <div className="p-1.5 rounded-full bg-muted">
-                <Bot className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold">Assistant de Mohamed</p>
-                <p className="text-xs text-foreground/60">{profileTitles[selectedProfile]}</p>
-              </div>
-            </div>
-            <button aria-label="Fermer" className="p-1 hover:opacity-80" onClick={() => setOpen(false)}>
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-
-          <ScrollArea className="flex-1 px-3 py-3">
-            <div className="space-y-3">
-              {messages.map((m) => (
-                <div key={m.id} className={m.role === "assistant" ? "flex items-start gap-2" : "flex items-start gap-2 justify-end"}>
-                  {m.role === "assistant" && (
-                    <div className="mt-0.5 p-1 rounded-full bg-muted"><Bot className="w-4 h-4" /></div>
-                  )}
-                  <div className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${m.role === "assistant" ? "bg-muted" : "bg-primary text-primary-foreground"}`}>
-                    {m.content}
-                  </div>
-                  {m.role === "user" && (
-                    <div className="mt-0.5 p-1 rounded-full bg-primary/10 text-primary"><User className="w-4 h-4" /></div>
-                  )}
+        <div className="w-[92vw] max-w-[380px] h-[68vh] max-h-[560px] animate-scale-in">
+          <Card className="w-full h-full bg-background/95 backdrop-blur-sm shadow-2xl border border-border/50 overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-4 py-3 border-b bg-gradient-to-r from-primary/5 to-primary/10">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-full bg-gradient-to-br from-primary/20 to-primary/30">
+                  <Bot className="w-4 h-4 text-primary" />
                 </div>
-              ))}
-              {showContact && <ContactForm />}
-              <div ref={endRef} />
+                <div>
+                  <p className="text-sm font-bold text-foreground">Assistant de Mohamed</p>
+                  <p className="text-xs text-primary font-medium">{profileTitles[selectedProfile]}</p>
+                </div>
+              </div>
+              <button 
+                aria-label="Fermer" 
+                className="p-1.5 hover:bg-muted rounded-full transition-colors" 
+                onClick={() => setOpen(false)}
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
-          </ScrollArea>
 
-          <form onSubmit={handleSubmit} className="border-t p-2 flex items-center gap-2">
-            <Input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Écrivez votre question..."
-              className="flex-1"
-            />
-            <Button type="submit" size="icon" aria-label="Envoyer">
-              <Send className="w-4 h-4" />
-            </Button>
-          </form>
-        </Card>
+            <ScrollArea className="flex-1 px-3 py-3">
+              <div className="space-y-3">
+                {messages.map((m) => (
+                  <div key={m.id} className={m.role === "assistant" ? "flex items-start gap-2" : "flex items-start gap-2 justify-end"}>
+                    {m.role === "assistant" && (
+                      <div className="mt-0.5 p-1.5 rounded-full bg-gradient-to-br from-primary/20 to-primary/30">
+                        <Bot className="w-3 h-3 text-primary" />
+                      </div>
+                    )}
+                    <div className={`max-w-[85%] rounded-lg px-3 py-2 text-sm transition-all duration-200 ${
+                      m.role === "assistant" 
+                        ? "bg-muted border border-border/30" 
+                        : "bg-gradient-to-br from-primary to-primary/90 text-primary-foreground shadow-md"
+                    }`}>
+                      {m.content}
+                    </div>
+                    {m.role === "user" && (
+                      <div className="mt-0.5 p-1.5 rounded-full bg-primary/10 text-primary">
+                        <User className="w-3 h-3" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+                {showContact && <ContactForm />}
+                <div ref={endRef} />
+              </div>
+            </ScrollArea>
+
+            <form onSubmit={handleSubmit} className="border-t bg-muted/30 p-3 flex items-center gap-2">
+              <Input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Posez votre question à l'assistant..."
+                className="flex-1 border-border/50 focus:border-primary/50"
+              />
+              <Button 
+                type="submit" 
+                size="icon" 
+                aria-label="Envoyer"
+                className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-md"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
+            </form>
+          </Card>
+        </div>
       )}
     </div>
   );
