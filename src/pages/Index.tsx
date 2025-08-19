@@ -1,7 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import LoadingPage from '@/components/LoadingPage';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProjectsSection from '@/components/ProjectsSection';
@@ -14,8 +12,6 @@ import Footer from '@/components/Footer';
 import AgentChatWidget from '@/components/AgentChatWidget';
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   // Scroll animation handler
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -38,33 +34,19 @@ const Index = () => {
     };
   }, []);
 
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-  };
-
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {isLoading && (
-          <LoadingPage key="loading" onLoadingComplete={handleLoadingComplete} />
-        )}
-      </AnimatePresence>
-      
-      {!isLoading && (
-        <div className="min-h-screen bg-white">
-          <Navbar />
-          <HeroSection />
-          <ProjectsSection />
-          <SkillsSection />
-          <CertificationsSection />
-          <EducationSection />
-          <AboutSection />
-          <ContactSection />
-          <Footer />
-          <AgentChatWidget />
-        </div>
-      )}
-    </>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <HeroSection />
+      <ProjectsSection />
+      <SkillsSection />
+      <CertificationsSection />
+      <EducationSection />
+      <AboutSection />
+      <ContactSection />
+      <Footer />
+      <AgentChatWidget />
+    </div>
   );
 };
 
