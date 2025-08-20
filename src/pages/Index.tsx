@@ -12,6 +12,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import AgentChatWidget from '@/components/AgentChatWidget';
 import LoadingPage from '@/components/LoadingPage';
+import SEOHead from '@/components/SEOHead';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,6 +45,7 @@ const Index = () => {
 
   return (
     <>
+      <SEOHead />
       <AnimatePresence mode="wait">
         {isLoading ? (
           <LoadingPage key="loading" onComplete={handleLoadingComplete} />
