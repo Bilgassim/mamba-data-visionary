@@ -64,12 +64,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				portfolio: {
-					'blue-dark': '220 79% 15%',    // #0A2463 converti en HSL
-					'blue': '220 79% 32%',         // #1E3888 converti en HSL
-					'blue-light': '220 79% 55%',   // #3E6DDA converti en HSL
-					'gray-dark': '0 0% 20%',       // #333333 converti en HSL
-					'gray': '0 0% 29%',            // #4A4A4A converti en HSL
-					'gray-light': '0 0% 54%'       // #8A8A8A converti en HSL
+					'blue-dark': '#0A2463',
+					'blue': '#1E3888',
+					'blue-light': '#3E6DDA',
+					'gray-dark': '#333333',
+					'gray': '#4A4A4A',
+					'gray-light': '#8A8A8A'
 				}
 			},
 			borderRadius: {

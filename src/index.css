@@ -56,8 +56,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
-    color: hsl(220 79% 15%); /* portfolio-blue-dark en HSL */
+    @apply font-semibold text-portfolio-blue-dark;
   }
 }
 
@@ -67,23 +66,19 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12 relative;
-    color: hsl(220 79% 15%); /* portfolio-blue-dark en HSL */
+    @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-portfolio-blue-dark relative;
   }
 
   .section-title::after {
-    @apply content-[''] absolute -bottom-3 left-0 w-16 h-1;
-    background-color: hsl(220 79% 32%); /* portfolio-blue en HSL */
+    @apply content-[''] absolute -bottom-3 left-0 w-16 h-1 bg-portfolio-blue;
   }
 
   .timeline-item {
-    @apply relative pl-10 pb-10 border-l last:border-0;
-    border-color: hsl(220 79% 32%); /* portfolio-blue en HSL */
+    @apply relative pl-10 pb-10 border-l border-portfolio-blue last:border-0;
   }
 
   .timeline-dot {
-    @apply absolute -left-2.5 w-5 h-5 rounded-full;
-    background-color: hsl(220 79% 15%); /* portfolio-blue-dark en HSL */
+    @apply absolute -left-2.5 w-5 h-5 rounded-full bg-portfolio-blue-dark;
   }
 
   .card-hover {
@@ -91,17 +86,11 @@
   }
   
   .skill-badge {
-    @apply px-4 py-2 m-1 bg-white shadow rounded-full text-sm font-medium border border-gray-200 transition-all duration-300 hover:scale-105 hover:shadow-md;
-    color: hsl(220 79% 15%); /* portfolio-blue-dark en HSL */
-  }
-  
-  .skill-badge:hover {
-    border-color: hsl(220 79% 32%); /* portfolio-blue en HSL */
+    @apply px-4 py-2 m-1 bg-white shadow rounded-full text-sm font-medium text-portfolio-blue-dark border border-gray-200 transition-all duration-300 hover:scale-105 hover:shadow-md hover:border-portfolio-blue;
   }
 
   .force-icon {
-    @apply w-12 h-12 bg-white p-2.5 rounded-full shadow-md mb-3;
-    color: hsl(220 79% 32%); /* portfolio-blue en HSL */
+    @apply w-12 h-12 text-portfolio-blue bg-white p-2.5 rounded-full shadow-md mb-3;
   }
 
   .scroll-animation {
