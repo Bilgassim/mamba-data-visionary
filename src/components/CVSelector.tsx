@@ -1,3 +1,14 @@
+/**
+ * 📄 CVSelector - Composant de sélection et téléchargement de CV
+ * 
+ * Fonctionnalités :
+ * - Affiche 4 cartes correspondant aux 4 profils professionnels
+ * - Permet de changer de profil en cliquant sur une carte
+ * - Télécharge automatiquement le CV correspondant au profil sélectionné
+ * - Animation de chargement pendant le téléchargement
+ * 
+ * 📁 Les CV doivent être placés dans le dossier public/
+ */
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
