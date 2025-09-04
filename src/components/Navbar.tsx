@@ -34,7 +34,20 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#hero" className="text-xl md:text-2xl font-bold text-portfolio-blue-dark">MB</a>
+          <a href="#hero" className="relative group">
+            <span className="text-3xl md:text-4xl font-extralight text-portfolio-blue-dark transform transition-all duration-300 group-hover:scale-110" 
+                  style={{
+                    fontFamily: 'Brush Script MT, cursive',
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+                    background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}>
+              MB
+            </span>
+            <div className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+          </a>
         </div>
         
         {/* Desktop Menu */}
