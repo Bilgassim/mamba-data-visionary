@@ -26,7 +26,7 @@ export const profileDescriptions = {
 };
 
 export const ProfileProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [selectedProfile, setSelectedProfile] = useState<ProfileType>('data-engineering');
+  const [selectedProfile, setSelectedProfile] = useState<ProfileType>('project-manager');
 
   const getProfileTitle = (profile: ProfileType): string => {
     return profileTitles[profile];
