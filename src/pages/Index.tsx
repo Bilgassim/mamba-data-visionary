@@ -28,6 +28,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import AgentChatWidget from '@/components/AgentChatWidget';
 import LoadingPage from '@/components/LoadingPage';
+import CustomCursor from '@/components/CustomCursor';
 
 const Index = () => {
   // 🔄 États pour gérer l'affichage et les transitions
@@ -89,7 +90,9 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white cursor-none">
+      {/* 🖱️ Curseur personnalisé professionnel */}
+      <CustomCursor />
       {/* 🎬 Page de chargement - s'affiche au démarrage avec animations */}
       {isLoading && (
         <LoadingPage 
