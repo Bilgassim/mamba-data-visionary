@@ -30,7 +30,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to you (the website owner)
     const emailResponse = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>", // Change this to your verified domain
+      from: "Portfolio Contact <contact@notifications.boulkassoum.app>",
       to: ["boulkassoum2002@gmail.com"], // Your email
       replyTo: email, // Visitor's email for easy reply
       subject: `[Portfolio Contact] ${subject}`,
@@ -49,7 +49,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to visitor
     await resend.emails.send({
-      from: "Mohamed Boulkassoum <onboarding@resend.dev>",
+      from: "Mohamed Boulkassoum <noreply@notifications.boulkassoum.app>",
       to: [email],
       subject: "Message reçu - Mohamed Boulkassoum",
       html: `
